@@ -1,36 +1,165 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Instagram DM Automation SaaS
 
-## Getting Started
+A powerful Software-as-a-Service platform for automating Instagram Direct Messages using modern web technologies. Built with Next.js, Tailwind CSS, and Instagram API integration.
 
-First, run the development server:
+## Features
+
+- **Automated DM Responses**: Set up automated responses for Instagram direct messages
+- **Custom Message Templates**: Create and manage message templates
+- **Dashboard Analytics**: Track message statistics and engagement metrics
+- **Webhook Integration**: Real-time notifications and updates
+- **Multi-Account Support**: Manage multiple Instagram accounts
+- **User Authentication**: Secure login and account management
+- **Responsive Design**: Beautiful UI built with Tailwind CSS and Relume
+
+## Technologies Used
+
+- **Frontend**:
+
+  - Next.js 14+ (App Router)
+  - Tailwind CSS
+  - Relume UI Components
+  - TypeScript
+
+- **Backend**:
+
+  - Next.js API Routes
+  - Prisma ORM
+  - PostgreSQL Database
+  - Instagram Graph API
+  - Webhooks
+
+- **Authentication**:
+  - NextAuth.js
+  - OAuth 2.0 for Instagram
+
+## Prerequisites
+
+- Node.js 18 or later
+- PostgreSQL database
+- Instagram Business Account
+- Meta Developer Account
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/saas-bot-instagram.git
+cd saas-bot-instagram
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env
+```
+
+4. Configure your `.env` file with:
+
+```
+DATABASE_URL=
+
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_
+CLERK_SECRET_KEY=sk_test_
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/dashboard
+NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=/dashboard
+
+
+NEXT_PUBLIC_NGROK_URL=
+
+
+STRIPE_SUBSCRIPTION_PRICE_ID=
+STRIPE_CLIENT_SECRET=
+NEXT_PUBLIC_HOST_URL=http://localhost:3000
+INSTAGRAM_BASE_URL=https://graph.instagram.com
+INSTAGRAM_EMBEDDED_OAUTH_URL=
+INSTAGRAM_CLIENT_ID=
+INSTAGRAM_CLIENT_SECRET=
+INSTAGRAM_TOKEN_URL=https://api.instagram.com/oauth/access_token
+OPEN_AI_KEY=
+```
+
+5. Run database migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+6. Start the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+saas-bot-instagram/
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   ├── (protected)/
+│   │   └── api/
+│   ├── components/
+│   ├── lib/
+│   └── utils/
+├── prisma/
+│   └── schema.prisma
+├── public/
+└── ...
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instagram API Setup
 
-## Learn More
+1. Create a Meta Developer account
+2. Set up a Meta App
+3. Configure Instagram Graph API
+4. Set up webhook subscriptions
+5. Generate access tokens
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Log in to the dashboard
+2. Connect your Instagram Business account
+3. Create message templates
+4. Configure automation rules
+5. Monitor analytics
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, email support@yourdomain.com or create an issue in this repository.
+
+## Acknowledgments
+
+- Instagram Graph API Documentation
+- Next.js Documentation
+- Tailwind CSS Community
+- Prisma Documentation
